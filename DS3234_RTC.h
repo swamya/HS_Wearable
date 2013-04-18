@@ -3,7 +3,7 @@
 
 #include <SPI.h>
 #include "Common.h"
-
+#include "RGB.h"
 int RTC_init(){
   
   // Initialize the real-time-clock
@@ -86,6 +86,12 @@ String timeDateToString(){
 
   return(temp);
 
+}
+
+void resetVisualization(){
+  total_seconds = 0;
+  ledUpdate(255,0,0); //set to red
+  global_time = TimeDate[3]; //set the new day
 }
 
 #endif
