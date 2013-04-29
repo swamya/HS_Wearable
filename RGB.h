@@ -10,8 +10,8 @@ void RGB_init(){
   pinMode(RED_LED,OUTPUT);
   pinMode(GREEN_LED,OUTPUT);
   analogWrite(BLUE_LED,255);
-  analogWrite(GREEN_LED,255);
-  analogWrite(RED_LED,0); //default the LED to RED if total_seconds == 0
+  analogWrite(GREEN_LED,252);
+  analogWrite(RED_LED,92); //default the LED to DARK_RED if total_seconds == 0
 }
 
 //This function will change the color of the LED based on the the RGB parameters.
@@ -41,17 +41,17 @@ int secondsToInterval(int seconds){
 //This function will actually set the RGB values of the LED
 void changeLedColor(int val){
    switch(val){
-     case 1: ledUpdate(128,0,128); //violet
+     case 1: ledUpdate(255,85,0); //red/orange
              break;
-     case 2: ledUpdate(0,0,255); //blue
+     case 2: ledUpdate(255,185,0); //orange
              break;
-     case 3: ledUpdate(0,255,255); //aqua
+     case 3: ledUpdate(237,252,0); //yellow
              break;
-     case 4: ledUpdate(255,215,0); //gold/orange
+     case 4: ledUpdate(189,255,0); //yellow/green
              break;
-     case 5: ledUpdate(255,255,0); //yellow
+     case 5: ledUpdate(50,224,0); //green
              break;
-     case 6: ledUpdate(0,128,0); //green
+     case 6: ledUpdate(14,134,0); //greener green :)
              break;
    }    
 }
